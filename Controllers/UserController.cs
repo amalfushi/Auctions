@@ -41,7 +41,7 @@ namespace Auctions.Controllers
         public IActionResult CreateUser(RegisterUser u)
         {
             if(ModelState.IsValid){
-                List<User> users = _context.Users.Where(nu => nu.Username == u.Username).ToList();
+                List<User> users = _context.users.Where(nu => nu.Username == u.Username).ToList();
                 if(users.Count > 0){
                     ViewBag.InvalidUsername = true;
                     return View("Index");
@@ -71,7 +71,7 @@ namespace Auctions.Controllers
         {
             if(ModelState.IsValid)
             {
-                User user = _context.Users.Where(u => u.Username == lu.LogUsername).SingleOrDefault();
+                User user = _context.users.Where(u => u.Username == lu.LogUsername).SingleOrDefault();
                 if(user != null)
                 {   
                     PasswordHasher<User> hasher = new PasswordHasher<User>();
