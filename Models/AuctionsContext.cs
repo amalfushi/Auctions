@@ -6,9 +6,9 @@ namespace Auctions.Models
     {
         public AuctionsContext(DbContextOptions<AuctionsContext> options) : base(options) {}
 
-        public DbSet<User> Users { get; set;}
+        public DbSet<User> users { get; set;}
 
-        public DbSet<Auction> Auctions { get; set;}
-        public DbSet<Bid> Bids { get; set; }
+        public DbSet<Auction> auctions { get; set;}
+        public DbSet<Bid> bids { get; set; }
     }
 }
